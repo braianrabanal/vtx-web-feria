@@ -34,7 +34,6 @@ const navLinks = [
   { href: "/producto", label: "Producto" },
   { href: "/producto/chroma", label: "Chroma" },
   { href: "/producto/quality", label: "Quality" },
-  { href: "/tecnologia", label: "Tecnología" },
   { href: "/contacto", label: "Contacto" },
 ];
 

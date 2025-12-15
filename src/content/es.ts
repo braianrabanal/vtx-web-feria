@@ -3,7 +3,6 @@ export const nav = {
   producto: "Producto",
   chroma: "Chroma",
   quality: "Quality",
-  tecnologia: "Tecnología",
   contacto: "Contacto",
 };
 
@@ -96,23 +95,6 @@ export const qualityPage = {
     "Registro de defectos para análisis posterior",
     "Mejora del control de calidad y la consistencia del producto",
   ],
-};
-
-export const tecnologiaPage = {
-  title: "Tecnología VISIORTEX®",
-  intro:
-    "VISIORTEX® combina visión artificial y procesamiento de datos para ofrecer un control avanzado del proceso productivo textil.",
-  flujoTitle: "Flujo",
-  pasos: [
-    "Captura de imagen en línea",
-    "Procesamiento mediante visión artificial",
-    "Aplicación de modelos específicos según módulo",
-    "Generación de alertas y visualización",
-    "Registro histórico de datos",
-  ],
-  modularidadTitle: "Arquitectura modular",
-  modularidadBody:
-    "La arquitectura modular permite integrar Chroma y Quality de forma independiente o conjunta.",
 };
 
 export const contactoPage = {
