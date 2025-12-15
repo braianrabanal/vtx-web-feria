@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "VISIORTEX® convierte imagen y datos en decisiones objetivas para garantizar color y calidad en la producción textil.",
   icons: {
-    icon: "/brand/visiortex/logos/visiortex-icon.png",
+    icon: "/Visiortex-Icon-Gradient.ico",
   },
 };
 
