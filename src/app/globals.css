@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1a1e29; /* Deep Frame */
+  --foreground: #f2f4f3; /* Clarity White */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Paleta VISIORTEX */
+  --color-clarity-white: #f2f4f3;
+  --color-deep-frame: #1a1e29;
+  --color-chroma-violet: #6e29a5;
+  --color-quality-green: #00c48e;
+
+  --font-body: var(--font-glorida);
+  --font-heading: var(--font-performa);
+}
+
+body {
+  background: radial-gradient(circle at top left, #6e29a5 0, #1a1e29 40%, #00c48e 100%);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
