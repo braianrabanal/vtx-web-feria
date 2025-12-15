@@ -7,12 +7,19 @@ export default function ContactoPage() {
         <h1 className="font-heading text-2xl text-clarity-white md:text-3xl">
           {contactoPage.title}
         </h1>
-        <p className="max-w-2xl text-sm text-clarity-white/80">
+        <p className="max-w-xl text-sm text-clarity-white/80">
           {contactoPage.intro}
         </p>
       </header>
 
-      <form className="space-y-4 rounded-3xl border border-clarity-white/15 bg-deep-frame/80 p-6 text-sm text-clarity-white/90">
+      {/* Formulario simple compatible con despliegues estáticos (GitHub Pages).
+          Reemplaza el correo en `action` por la dirección de destino real. */}
+      <form
+        action="mailto:info@tusitioweb.com"
+        method="post"
+        encType="text/plain"
+        className="space-y-4 rounded-3xl border border-clarity-white/15 bg-deep-frame/80 p-m ml:space-y-4 text-sm text-clarity-white/90"
+      >
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-1.5">
             <label className="block text-xs text-clarity-white/75" htmlFor="nombre">
@@ -34,7 +41,7 @@ export default function ContactoPage() {
               id="email"
               name="email"
               type="email"
-              className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm outline-none focus:border-quality-green"
+              className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm text-deep-frame outline-none"
               required
             />
           </div>
@@ -48,7 +55,7 @@ export default function ContactoPage() {
             id="empresa"
             name="empresa"
             type="text"
-            className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm outline-none focus:border-quality-green"
+            className="w-full rounded-xl border border-clarity-white/25 bg-deep-frame px-3 py-2 text-sm text-clarity-white outline-none"
           />
         </div>
 
@@ -60,14 +67,14 @@ export default function ContactoPage() {
             id="mensaje"
             name="mensaje"
             rows={4}
-            className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm outline-none focus:border-quality-green"
+            className="w-full rounded-xl border border-clarity-white/25 bg-deep-frame px-3 py-2 text-sm text-clarity-white outline-none"
             required
           />
         </div>
 
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-chroma-violet to-quality-green px-6 py-2.5 text-xs font-semibold text-clarity-white shadow-sm shadow-black/40"
+          className="inline-flex items-center justify-center rounded-full bg-deep-frame px-6 py-2.5 text-xs font-semibold text-clarity-white shadow-sm shadow-black/25"
         >
           {contactoPage.submit}
         </button>
