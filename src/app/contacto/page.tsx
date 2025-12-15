@@ -18,7 +18,7 @@ export default function ContactoPage() {
         action="mailto:info@tusitioweb.com"
         method="post"
         encType="text/plain"
-        className="space-y-4 rounded-3xl border border-clarity-white/15 bg-deep-frame/80 p-m ml:space-y-4 text-sm text-clarity-white/90"
+        className="space-y-4 rounded-3xl border border-clarity-white/15 bg-deep-frame/80 p-6 text-sm text-clarity-white/90"
       >
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-1.5">
@@ -41,7 +41,7 @@ export default function ContactoPage() {
               id="email"
               name="email"
               type="email"
-              className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm text-deep-frame outline-none"
+              className="w-full rounded-xl border border-clarity-white/25 bg-transparent px-3 py-2 text-sm outline-none focus:border-quality-green"
               required
             />
           </div>
@@ -74,7 +74,7 @@ export default function ContactoPage() {
 
         <button
           type="submit"
-          className="inline-flex items-center justify-center rounded-full bg-deep-frame px-6 py-2.5 text-xs font-semibold text-clarity-white shadow-sm shadow-black/25"
+          className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-chroma-violet to-quality-green px-6 py-2.5 text-xs font-semibold text-clarity-white shadow-sm shadow-black/40 hover:opacity-90"
         >
           {contactoPage.submit}
         </button>
