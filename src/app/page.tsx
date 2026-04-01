@@ -124,6 +124,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Proceso */}
+      <section className="space-y-5">
+        <h2 className="font-heading text-lg text-clarity-white md:text-xl">
+          {home.proceso.title}
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {home.proceso.steps.map((step, index) => (
+            <article
+              key={step.title}
+              className="rounded-2xl border border-clarity-white/15 bg-deep-frame/80 p-4"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-quality-green">
+                Paso {index + 1}
+              </p>
+              <h3 className="mt-2 font-heading text-base text-clarity-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm text-clarity-white/80">{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* Beneficios */}
       <section className="space-y-5">
         <h2 className="font-heading text-lg text-clarity-white md:text-xl">
@@ -168,47 +191,24 @@ export default function Home() {
       </section>
 
       {/* Impacto */}
-      <section className="space-y-5 rounded-3xl border border-clarity-white/15 bg-gradient-to-br from-deep-frame/90 via-deep-frame/80 to-chroma-violet/20 p-5 md:p-7">
+      <section className="space-y-5 rounded-3xl border border-clarity-white/15 bg-gradient-to-br from-deep-frame/90 via-deep-frame/80 to-chroma-violet/20 p-5 text-center md:p-7">
         <h2 className="font-heading text-lg text-clarity-white md:text-xl">
           {home.impacto.title}
         </h2>
-        <p className="max-w-2xl text-sm text-clarity-white/80">
+        <p className="mx-auto max-w-2xl text-sm text-clarity-white/80">
           {home.impacto.subtitle}
         </p>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-2 md:grid-cols-3">
           {home.impacto.metrics.map((metric) => (
             <div
               key={metric.label}
-              className="rounded-2xl border border-clarity-white/15 bg-black/20 p-4"
+              className="rounded-2xl border border-clarity-white/15 bg-black/20 p-4 text-center"
             >
               <p className="font-heading text-2xl text-clarity-white">
                 {metric.value}
               </p>
               <p className="mt-1 text-xs text-clarity-white/75">{metric.label}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Proceso */}
-      <section className="space-y-5">
-        <h2 className="font-heading text-lg text-clarity-white md:text-xl">
-          {home.proceso.title}
-        </h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {home.proceso.steps.map((step, index) => (
-            <article
-              key={step.title}
-              className="rounded-2xl border border-clarity-white/15 bg-deep-frame/80 p-4"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wider text-quality-green">
-                Paso {index + 1}
-              </p>
-              <h3 className="mt-2 font-heading text-base text-clarity-white">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-clarity-white/80">{step.text}</p>
-            </article>
           ))}
         </div>
       </section>

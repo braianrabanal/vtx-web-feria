@@ -72,8 +72,8 @@ export const home = {
     metrics: [
       { value: "24/7", label: "Supervisión continua" },
       { value: "< 1 s", label: "Tiempo de alerta en línea" },
-      { value: "100%", label: "Inspección digital del tejido" },
-      { value: "1 plataforma", label: "Color y defectos unificados" },
+      { value: "100%", label: "Inspección digital del tejido" }
+
     ],
   },
   proceso: {
