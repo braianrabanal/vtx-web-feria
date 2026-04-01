@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
+import HeaderLogo from "@/components/header-logo";
 import "./globals.css";
 
 const glorida = localFont({
@@ -50,20 +51,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col bg-deep-frame text-clarity-white">
           <header className="sticky top-0 z-40 border-b border-clarity-white/10 bg-deep-frame/90 backdrop-blur-xl">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3 md:px-8">
-              <Link href="/" className="flex items-center gap-3">
-                <div className="relative h-10 w-40 md:h-12 md:w-48">
-                  <Image
-                    src="/brand/visiortex/logos/visiortex-logo-white.png"
-                    alt="VISIORTEX®"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-                <span className="sr-only">
-                  VISIORTEX® · Visión artificial para el control de calidad textil
-                </span>
-              </Link>
+              <HeaderLogo />
               <nav className="hidden items-center gap-6 text-sm text-clarity-white/80 md:flex">
                 {navLinks.map((link) => (
                   <Link
