@@ -9,11 +9,12 @@ Landing de **VISIORTEX** construida con [Next.js](https://nextjs.org) y Tailwind
 ## Desarrollo (pnpm)
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm dev
 ```
 
 Después, abre `http://localhost:3000` en el navegador.
+
 
 ## Despliegue en Vercel
 
