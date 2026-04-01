@@ -143,6 +143,99 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Retos en planta */}
+      <section className="space-y-5">
+        <h2 className="font-heading text-lg text-clarity-white md:text-xl">
+          {home.retos.title}
+        </h2>
+        <p className="max-w-2xl text-sm text-clarity-white/80">
+          {home.retos.intro}
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {home.retos.items.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-clarity-white/15 bg-deep-frame/80 p-4"
+            >
+              <h3 className="font-heading text-base text-clarity-white">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm text-clarity-white/80">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Impacto */}
+      <section className="space-y-5 rounded-3xl border border-clarity-white/15 bg-gradient-to-br from-deep-frame/90 via-deep-frame/80 to-chroma-violet/20 p-5 md:p-7">
+        <h2 className="font-heading text-lg text-clarity-white md:text-xl">
+          {home.impacto.title}
+        </h2>
+        <p className="max-w-2xl text-sm text-clarity-white/80">
+          {home.impacto.subtitle}
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {home.impacto.metrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="rounded-2xl border border-clarity-white/15 bg-black/20 p-4"
+            >
+              <p className="font-heading text-2xl text-clarity-white">
+                {metric.value}
+              </p>
+              <p className="mt-1 text-xs text-clarity-white/75">{metric.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Proceso */}
+      <section className="space-y-5">
+        <h2 className="font-heading text-lg text-clarity-white md:text-xl">
+          {home.proceso.title}
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {home.proceso.steps.map((step, index) => (
+            <article
+              key={step.title}
+              className="rounded-2xl border border-clarity-white/15 bg-deep-frame/80 p-4"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-quality-green">
+                Paso {index + 1}
+              </p>
+              <h3 className="mt-2 font-heading text-base text-clarity-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm text-clarity-white/80">{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="rounded-3xl border border-quality-green/40 bg-gradient-to-r from-deep-frame/90 via-chroma-violet/20 to-quality-green/20 p-6 md:p-8">
+        <h2 className="font-heading text-2xl text-clarity-white md:text-3xl">
+          {home.finalCta.title}
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-clarity-white/85 md:text-base">
+          {home.finalCta.text}
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/contacto"
+            className="inline-flex items-center justify-center rounded-full bg-quality-green px-6 py-3 text-sm font-semibold text-deep-frame transition hover:bg-quality-green/90"
+          >
+            {home.finalCta.primary}
+          </Link>
+          <Link
+            href="/producto"
+            className="inline-flex items-center justify-center rounded-full border border-clarity-white/40 px-6 py-3 text-sm font-medium text-clarity-white hover:border-clarity-white"
+          >
+            {home.finalCta.secondary}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

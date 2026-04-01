@@ -12,7 +12,7 @@ export const home = {
     subtitle:
       "VISIORTEX® convierte imagen y datos en decisiones objetivas para garantizar color y calidad en la producción textil.",
     primaryCta: "Ver módulos",
-    secondaryCta: "Contactar",
+    secondaryCta: "Solicitar demo",
   },
   modulesIntro: "Módulos VISIORTEX®",
   chroma: {
@@ -45,6 +45,59 @@ export const home = {
       "Mejora de la trazabilidad del proceso",
       "Soporte a la toma de decisiones en planta",
     ],
+  },
+  retos: {
+    title: "Retos frecuentes en planta textil",
+    intro:
+      "Hemos observado patrones comunes en fabricantes que buscan reducir desperdicio y mejorar márgenes de forma sostenible.",
+    items: [
+      {
+        title: "Inspección manual inconsistente",
+        text: "La variabilidad humana puede dejar pasar defectos o generar reprocesos innecesarios.",
+      },
+      {
+        title: "Falta de visibilidad en tiempo real",
+        text: "Tomar decisiones tarde incrementa el coste de no calidad y el desperdicio.",
+      },
+      {
+        title: "Trazabilidad limitada",
+        text: "Sin datos estructurados es difícil comparar lotes, turnos y causas de incidencia.",
+      },
+    ],
+  },
+  impacto: {
+    title: "Impacto operativo medible",
+    subtitle:
+      "VISIORTEX® transforma datos de producción en mejoras continuas para calidad, coste y sostenibilidad.",
+    metrics: [
+      { value: "24/7", label: "Supervisión continua" },
+      { value: "< 1 s", label: "Tiempo de alerta en línea" },
+      { value: "100%", label: "Inspección digital del tejido" },
+      { value: "1 plataforma", label: "Color y defectos unificados" },
+    ],
+  },
+  proceso: {
+    title: "Cómo funciona VISIORTEX®",
+    steps: [
+      {
+        title: "Captura",
+        text: "Adquisición continua de imagen y señal de proceso durante producción.",
+      },
+      {
+        title: "Análisis IA",
+        text: "Evaluación automática de variaciones de color y defectos con modelos entrenados.",
+      },
+      {
+        title: "Acción en planta",
+        text: "Alertas y paneles para actuar a tiempo, reducir mermas y estabilizar calidad.",
+      },
+    ],
+  },
+  finalCta: {
+    title: "¿Listos para modernizar el control de calidad textil?",
+    text: "Integra VISIORTEX® en tu planta y convierte cada metro producido en datos accionables.",
+    primary: "Hablar con el equipo",
+    secondary: "Ver producto",
   },
 };
 
