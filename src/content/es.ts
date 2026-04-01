@@ -89,7 +89,7 @@ export const home = {
       },
       {
         title: "Acción en planta",
-        text: "Alertas y paneles para actuar a tiempo, reducir mermas y estabilizar calidad.",
+        text: "Paneles operativos y alertas inmediatas que facilitan decisiones rápidas y mejoran la estabilidad del proceso.",
       },
     ],
   },
