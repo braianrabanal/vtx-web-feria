@@ -12,3 +12,4 @@ Estructura esperada de assets de VISIORTEX®
 Copia los archivos desde docs/Digital Brand Visiortex a estas rutas y nombres.
 
 
+.
