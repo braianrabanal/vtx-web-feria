@@ -96,7 +96,7 @@ export const home = {
   finalCta: {
     title: "¿Listos para modernizar el control de calidad textil?",
     text: "Integra VISIORTEX® en tu planta y convierte cada metro producido en datos accionables.",
-    primary: "Hablar con el equipo",
+    primary: "Contacta con nosotros",
     secondary: "Ver producto",
   },
 };
