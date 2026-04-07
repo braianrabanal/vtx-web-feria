@@ -71,9 +71,18 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Error enviando correo de contacto:", error);
     return NextResponse.json(
-      { ok: false, error: "No se pudo enviar el mensaje." },
+      {
+        ok: false,
+        error:
+          process.env.NODE_ENV === "development"
+            ? `No se pudo enviar el mensaje. ${
+                error instanceof Error ? error.message : "Error desconocido."
+              }`
+            : "No se pudo enviar el mensaje.",
+      },
       { status: 500 },
     );
   }

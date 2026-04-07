@@ -15,6 +15,11 @@ npm dev
 
 Después, abre `http://localhost:3000` en el navegador.
 
+## Configuración de Email de Contacto
+
+Para configurar el envío real de correos desde el formulario de `Contacto`, revisa:
+
+- `README-CONTACTO-EMAIL.md`
 
 ## Despliegue en Vercel
 
