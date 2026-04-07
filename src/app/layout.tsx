@@ -46,18 +46,37 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${glorida.variable} ${performa.variable} bg-deep-frame text-clarity-white antialiased`}
+        className={`${glorida.variable} ${performa.variable} bg-[#f3f3f4] text-[#1b2130] antialiased`}
       >
-        <div className="flex min-h-screen flex-col bg-deep-frame text-clarity-white">
-          <header className="sticky top-0 z-40 border-b border-clarity-white/10 bg-deep-frame/90 backdrop-blur-xl">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3 md:px-8">
+        <div className="relative -left-[17px] -top-[21px] flex h-[1080px] w-[1920px] flex-col bg-[#f3f3f4] text-[#1b2130] opacity-100">
+          <header className="z-40 bg-[#f3f3f4]">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-6 md:px-8">
               <HeaderLogo />
-              <nav className="hidden items-center gap-6 text-sm text-clarity-white/80 md:flex">
+              <nav
+                className="hidden items-center gap-9 md:flex"
+                style={{
+                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                  fontWeight: 500,
+                  fontSize: "20px",
+                  color: "#707070",
+                }}
+              >
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="hover:text-clarity-white"
+                    className="uppercase hover:text-[#1b2130]"
+                    style={
+                      link.href === "/"
+                        ? {
+                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                            fontWeight: 700,
+                            fontStyle: "italic",
+                            fontSize: "20px",
+                            color: "#707070",
+                          }
+                        : undefined
+                    }
                   >
                     {link.label}
                   </Link>
