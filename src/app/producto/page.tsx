@@ -1,39 +1,151 @@
+import Image from "next/image";
 import Link from "next/link";
 import { producto } from "@/content/es";
+import productoVideoRef from "../../../webadobe-boceto/pagina2/3.png";
 
 export default function ProductoPage() {
   return (
-    <div className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="font-heading text-2xl text-clarity-white md:text-3xl">
-          {producto.title}
+    <div className="space-y-12 md:space-y-14">
+      <header className="space-y-8 pt-6 md:pt-10">
+        <h1
+          style={{
+            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontWeight: 700,
+            fontSize: "126px",
+            lineHeight: "0.95",
+            color: "#1A1E29",
+          }}
+        >
+          Producto
         </h1>
-        <p className="max-w-2xl text-sm text-clarity-white/80">
+        <p
+          className="max-w-[1120px]"
+          style={{
+            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontWeight: 400,
+            fontSize: "28px",
+            lineHeight: "1.2",
+            color: "#4B4B4B",
+          }}
+        >
           {producto.intro}
         </p>
       </header>
 
-      <section className="grid gap-6 md:grid-cols-2">
-        <Link
-          href="/producto/chroma"
-          className="block space-y-3 rounded-3xl border border-chroma-violet/60 bg-deep-frame/80 p-5 text-sm text-clarity-white/85 transition hover:border-chroma-violet hover:bg-deep-frame"
-        >
-          <h2 className="font-heading text-lg text-clarity-white">Chroma</h2>
-          <p>{producto.chromaBlock}</p>
-        </Link>
-        <Link
-          href="/producto/quality"
-          className="block space-y-3 rounded-3xl border border-quality-green/70 bg-deep-frame/80 p-5 text-sm text-clarity-white/85 transition hover:border-quality-green hover:bg-deep-frame"
-        >
-          <h2 className="font-heading text-lg text-clarity-white">Quality</h2>
-          <p>{producto.qualityBlock}</p>
-        </Link>
+      <section className="-mx-5 bg-[#151b2d] px-5 py-14 md:-mx-8 md:px-8">
+        <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
+          <Link
+            href="/producto/chroma"
+            className="block rounded-md bg-[#efefef] px-10 py-9 transition hover:opacity-95"
+          >
+            <div className="flex justify-center">
+              <div className="relative h-14 w-72">
+                <img
+                  src="/brand/visiortex/modules/chroma/visiortex-chroma-logoblack.png"
+                  alt="VISIORTEX Chroma"
+                  className="h-full w-full scale-[0.92] object-contain"
+                />
+              </div>
+            </div>
+            <div className="mt-8 border-t border-[#737985]" />
+            <p
+              className="mt-8 max-w-[760px]"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                fontSize: "22px",
+                lineHeight: "1.16",
+                color: "#4b4b4b",
+              }}
+            >
+              {producto.chromaBlock}
+            </p>
+            <p
+              className="mt-8"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: "22px",
+                color: "#353945",
+              }}
+            >
+              <span className="inline-flex items-center gap-2">
+                Ver Chroma
+                <span className="text-[18px] font-medium text-[#4f5560]">
+                  ⟶
+                </span>
+              </span>
+            </p>
+          </Link>
+
+          <Link
+            href="/producto/quality"
+            className="block rounded-md bg-[#efefef] px-10 py-9 transition hover:opacity-95"
+          >
+            <div className="flex justify-center">
+              <div className="relative h-14 w-72">
+                <img
+                  src="/brand/visiortex/modules/quality/visiortex-quality-logoblack.png"
+                  alt="VISIORTEX Quality"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            </div>
+            <div className="mt-8 border-t border-[#737985]" />
+            <p
+              className="mt-8 max-w-[760px]"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 400,
+                fontSize: "22px",
+                lineHeight: "1.16",
+                color: "#4b4b4b",
+              }}
+            >
+              {producto.qualityBlock}
+            </p>
+            <p
+              className="mt-8"
+              style={{
+                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: "22px",
+                color: "#353945",
+              }}
+            >
+              <span className="inline-flex items-center gap-2">
+                Ver Quality
+                <span className="text-[18px] font-medium text-[#4f5560]">
+                  ⟶
+                </span>
+              </span>
+            </p>
+          </Link>
+        </div>
       </section>
 
-      <section>
-        <p className="max-w-2xl text-sm text-clarity-white/80">
-          {producto.cierre}
-        </p>
+      <section className="-mx-5 bg-[#efefef] md:-mx-8">
+        <div className="relative mx-auto min-h-[520px] max-w-[1720px] overflow-hidden">
+          <Image
+            src={productoVideoRef}
+            alt="VISIORTEX control de calidad inteligente"
+            fill
+            className="scale-[1.02] object-cover object-top"
+          />
+        </div>
+        <div className="mx-auto max-w-[1720px] px-5 py-5 md:px-8">
+          <p
+            style={{
+              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+              fontSize: "40px",
+              lineHeight: "1.15",
+              color: "#4b4b4b",
+            }}
+          >
+            (Video) Prototipo Antiguo | Así empezo Visiortex.
+          </p>
+        </div>
       </section>
     </div>
   );

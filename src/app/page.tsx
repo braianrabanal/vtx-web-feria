@@ -88,7 +88,10 @@ export default function Home() {
             </ul>
             <div className="mt-6">
               <Link href="/producto/chroma" className="text-[22px] font-bold text-[#3f434d]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
-                Ver Chroma -&gt;
+                <span className="inline-flex items-center gap-2">
+                  Ver Chroma
+                  <span className="text-[18px] font-medium text-[#4f5560]">⟶</span>
+                </span>
               </Link>
             </div>
           </article>
@@ -115,7 +118,10 @@ export default function Home() {
             </ul>
             <div className="mt-6">
               <Link href="/producto/quality" className="text-[22px] font-bold text-[#2e3340]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
-                Ver Quality -&gt;
+                <span className="inline-flex items-center gap-2">
+                  Ver Quality
+                  <span className="text-[18px] font-medium text-[#4f5560]">⟶</span>
+                </span>
               </Link>
             </div>
           </article>

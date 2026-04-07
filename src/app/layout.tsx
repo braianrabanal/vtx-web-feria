@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Link from "next/link";
 import HeaderLogo from "@/components/header-logo";
+import HeaderNav from "@/components/header-nav";
 import "./globals.css";
 
 const glorida = localFont({
@@ -29,14 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/producto", label: "Producto" },
-  { href: "/producto/chroma", label: "Chroma" },
-  { href: "/producto/quality", label: "Quality" },
-  { href: "/contacto", label: "Contacto" },
-];
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,36 +43,7 @@ export default function RootLayout({
           <header className="z-40 bg-[#f3f3f4]">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-6 md:px-8">
               <HeaderLogo />
-              <nav
-                className="hidden items-center gap-9 md:flex"
-                style={{
-                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                  fontWeight: 500,
-                  fontSize: "20px",
-                  color: "#707070",
-                }}
-              >
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="uppercase hover:text-[#1b2130]"
-                    style={
-                      link.href === "/"
-                        ? {
-                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-                            fontWeight: 700,
-                            fontStyle: "italic",
-                            fontSize: "20px",
-                            color: "#707070",
-                          }
-                        : undefined
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
+              <HeaderNav />
             </div>
           </header>
 
