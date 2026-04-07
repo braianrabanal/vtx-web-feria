@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Image from "next/image";
 import Link from "next/link";
 import HeaderLogo from "@/components/header-logo";
 import "./globals.css";
@@ -89,19 +88,18 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="border-t border-clarity-white/10 bg-deep-frame/95">
-            <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-5 py-5 text-center text-xs text-clarity-white/75 md:px-8">
-              <div className="flex items-center justify-center gap-3">
-                <div className="relative h-8 w-32">
-                  <Image
-                    src="/brand/visiortex/logos/visiortex-logo-white.png"
-                    alt="VISIORTEX®"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span>VTX Analytics S.L.</span>
-              </div>
+          <footer className="bg-[#171d31]">
+            <div className="mx-auto flex max-w-7xl items-center justify-center px-5 py-4 md:px-8">
+              <p
+                style={{
+                  fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                  fontWeight: 500,
+                  fontSize: "20px",
+                  color: "#f1f2f4",
+                }}
+              >
+                VISIORTEX® | VTX Analytics S.L
+              </p>
             </div>
           </footer>
         </div>

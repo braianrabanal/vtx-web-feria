@@ -164,8 +164,8 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="p-3">
-            <div className="relative min-h-[500px] overflow-hidden rounded-md">
+          <div className="flex p-3">
+            <div className="relative h-full min-h-[500px] w-full overflow-hidden rounded-md">
               <Image src="/images-web/pagina1imagen1.png" alt="Beneficios VISIORTEX en planta" fill className="object-cover object-right" />
             </div>
           </div>
@@ -190,9 +190,102 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="p-3">
-            <div className="relative min-h-[560px] overflow-hidden rounded-md">
+          <div className="flex p-3">
+            <div className="relative h-full min-h-[560px] w-full overflow-hidden rounded-md">
               <Image src="/images-web/pagina1imagen2.png" alt="Retos frecuentes en planta textil" fill className="object-cover object-[center_38%]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="-mx-5 bg-[#efefef] px-5 py-8 md:-mx-8 md:px-8">
+        <div className="mx-auto max-w-[1720px] text-center">
+          <h2
+            style={{
+              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontWeight: 700,
+              fontSize: "30px",
+              color: "#4f535a",
+            }}
+          >
+            {home.impacto.title}
+          </h2>
+          <p
+            className="mx-auto mt-3 max-w-[1400px]"
+            style={{
+              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontWeight: 400,
+              fontSize: "20px",
+              color: "#4b4b4b",
+            }}
+          >
+            {home.impacto.subtitle}
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[home.impacto.metrics[0], home.impacto.metrics[2], home.impacto.metrics[1]].map(
+              (metric) => (
+                <div
+                  key={metric.label}
+                  className="rounded-2xl border border-[#8e949d] bg-transparent px-5 py-3 text-left"
+                >
+                  <p
+                    style={{
+                      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                      fontWeight: 700,
+                      fontSize: "24px",
+                      color: "#4f535a",
+                    }}
+                  >
+                    {metric.value} |{" "}
+                    <span style={{ fontWeight: 500 }}>{metric.label}</span>
+                  </p>
+                </div>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="-mx-5 bg-[#e8e8e8] px-5 py-10 md:-mx-8 md:px-8">
+        <div className="mx-auto max-w-[1720px]">
+          <h3
+            style={{
+              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontWeight: 700,
+              fontSize: "30px",
+              color: "#4f535a",
+            }}
+          >
+            Colaboradores
+          </h3>
+          <div className="mt-7 rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
+            <div className="grid items-center gap-0 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
+              <div className="relative mx-auto h-24 w-full max-w-[340px]">
+                <Image
+                  src="/images-web/uc.png"
+                  alt="Logo Universidad de Cantabria"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="hidden h-16 w-px bg-[#b4b8bf] md:block" />
+              <div className="relative mx-auto h-24 w-full max-w-[340px]">
+                <Image
+                  src="/images-web/logo-ctc-gris.png"
+                  alt="Logo CTC"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="hidden h-16 w-px bg-[#b4b8bf] md:block" />
+              <div className="relative mx-auto h-24 w-full max-w-[340px]">
+                <Image
+                  src="/images-web/UBU_logo.png"
+                  alt="Logo Universidad de Burgos"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
