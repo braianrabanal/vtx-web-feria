@@ -269,7 +269,7 @@ export default function Home() {
                 />
               </div>
               <span className="hidden h-16 w-px bg-[#b4b8bf] md:block" />
-              <div className="relative mx-auto h-24 w-full max-w-[340px]">
+              <div className="relative mx-auto h-28 w-full max-w-[380px]">
                 <Image
                   src="/images-web/logo-ctc-gris.png"
                   alt="Logo CTC"
