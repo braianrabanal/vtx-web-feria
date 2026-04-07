@@ -44,7 +44,7 @@ CONTACT_TO_EMAIL=tu_correo_destino@tudominio.com
 ## 3) Reiniciar servidor
 
 Si tenias `npm run dev` levantado, reinicialo para cargar variables nuevas:
-
+   .
 ```bash
 npm run dev
 ```
