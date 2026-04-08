@@ -1,96 +1,82 @@
-# Configurar Email de Contacto
+# Configurar Contacto con Resend
 
-Esta guia explica como configurar el formulario de `Contacto` para que los mensajes lleguen al correo que tu quieras.
+Este proyecto esta configurado para enviar los mensajes del formulario de `Contacto` usando **Resend**.
 
-## 1) Crear archivo de entorno local
+## 1) Crear API Key en Resend
 
-En la raiz del proyecto, crea un archivo:
+1. Entra en [resend.com](https://resend.com)
+2. Ve a **API Keys**
+3. Crea una key nueva (`re_...`)
 
-` .env.local `
+## 2) Crear `.env.local`
 
-Puedes copiar la plantilla:
+En la raiz del proyecto:
 
 ```bash
 cp .env.example .env.local
 ```
 
-## 2) Rellenar variables SMTP
-
-Edita `.env.local` con tus datos reales:
+Rellena `.env.local` asi:
 
 ```env
-SMTP_HOST=smtp.tudominio.com
+SMTP_HOST=smtp.resend.com
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=usuario_smtp
-SMTP_PASS=password_smtp
+SMTP_USER=resend
+SMTP_PASS=re_xxxxxxxxxxxxxxxxx
 
-CONTACT_FROM_EMAIL=no-reply@tudominio.com
-CONTACT_TO_EMAIL=tu_correo_destino@tudominio.com
+CONTACT_FROM_EMAIL=onboarding@resend.dev
+CONTACT_TO_EMAIL=tu_correo_destino@gmail.com
 ```
 
-### Que significa cada variable
+### Campos importantes
 
-- `SMTP_HOST`: servidor SMTP de tu proveedor.
-- `SMTP_PORT`: normalmente `587` (TLS) o `465` (SSL).
-- `SMTP_SECURE`:
-  - `false` para puerto `587`
-  - `true` para puerto `465`
-- `SMTP_USER`: usuario SMTP.
-- `SMTP_PASS`: password SMTP (o app password).
-- `CONTACT_FROM_EMAIL`: remitente que aparecera en el email enviado.
-- `CONTACT_TO_EMAIL`: correo que recibira los mensajes del formulario.
+- `SMTP_PASS`: tu API key de Resend (`re_...`)
+- `CONTACT_TO_EMAIL`: correo al que quieres recibir los mensajes
+- `CONTACT_FROM_EMAIL`: remitente de salida
+  - En pruebas: `onboarding@resend.dev`
+  - En produccion: tu dominio verificado en Resend (recomendado)
 
-## 3) Reiniciar servidor
+## 3) Levantar proyecto y probar
 
-Si tenias `npm run dev` levantado, reinicialo para cargar variables nuevas:
-   .
 ```bash
 npm run dev
 ```
 
-## 4) Probar envio
-
+Luego:
 1. Abre `/contacto`
-2. Rellena formulario
-3. Pulsa `Enviar Mensaje`
-4. Verifica que llega email a `CONTACT_TO_EMAIL`
+2. Envía un mensaje
+3. Verifica que llega a `CONTACT_TO_EMAIL`
 
-## 5) Solucion de errores comunes
+## 4) Configurar Vercel
 
-- **"Falta configuracion SMTP en variables de entorno"**
-  - Falta alguna variable en `.env.local`.
+En **Project > Settings > Environment Variables**, crea las mismas variables:
 
-- **No se envia con Gmail**
-  - Usa App Password (no password normal).
-  - Activa 2FA y genera contraseña de aplicacion.
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `CONTACT_FROM_EMAIL`
+- `CONTACT_TO_EMAIL`
 
-- **Error de autenticacion SMTP**
-  - Revisa `SMTP_USER`, `SMTP_PASS`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`.
+Aplicalas a **Production** y **Preview**, y haz **Redeploy**.
+
+## 5) Errores comunes
+
+- **No se pudo enviar el mensaje**
+  - API key incorrecta o vacia (`SMTP_PASS`)
+  - Variables no cargadas en Vercel
 
 - **No llega el correo**
-  - Mira carpeta spam.
-  - Revisa politicas del proveedor (`from` permitido por dominio).
+  - Revisa spam
+  - Revisa que `CONTACT_TO_EMAIL` este bien escrito
 
-## 6) Ejemplo rapido con Gmail (App Password)
+- **Error con remitente**
+  - Usa `onboarding@resend.dev` para pruebas
+  - O verifica tu dominio en Resend para usar tu propio remitente
 
-```env
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=tu_cuenta@gmail.com
-SMTP_PASS=tu_app_password_16_caracteres
+## Referencias del proyecto
 
-CONTACT_FROM_EMAIL=tu_cuenta@gmail.com
-CONTACT_TO_EMAIL=tu_cuenta@gmail.com
-```
-
-## Nota tecnica
-
-El endpoint backend que envia los correos esta en:
-
-`src/app/api/contacto/route.ts`
-
-La pagina de formulario esta en:
-
-`src/app/contacto/page.tsx`
+- Backend de contacto: `src/app/api/contacto/route.ts`
+- Formulario: `src/app/contacto/page.tsx`
