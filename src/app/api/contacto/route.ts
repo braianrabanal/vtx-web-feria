@@ -47,6 +47,52 @@ export async function POST(req: Request) {
       );
     }
 
+    // Preferir Resend HTTP API para tener ack rápido y fiable.
+    // Si estás usando Resend SMTP (host smtp.resend.com y user resend), `SMTP_PASS`
+    // normalmente es una API key `re_...` que se puede usar aquí directamente.
+    if (host === "smtp.resend.com" && user === "resend" && pass.startsWith("re_")) {
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${pass}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from,
+          to: [to],
+          reply_to: email,
+          subject: `Nuevo mensaje de contacto - ${nombre}`,
+          text: `Nombre: ${nombre}\nEmail: ${email}\nEmpresa: ${empresa || "-"}\n\nMensaje:\n${mensaje}`,
+          html: `
+            <h2>Nuevo mensaje de contacto</h2>
+            <p><strong>Nombre:</strong> ${nombre}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Empresa:</strong> ${empresa || "-"}</p>
+            <p><strong>Mensaje:</strong></p>
+            <p>${mensaje.replace(/\n/g, "<br/>")}</p>
+          `,
+        }),
+      });
+
+      const data = (await res.json().catch(() => null)) as
+        | { id?: string; error?: { message?: string } }
+        | null;
+
+      if (!res.ok) {
+        return NextResponse.json(
+          {
+            ok: false,
+            error:
+              data?.error?.message ||
+              "Resend no pudo aceptar el correo de contacto.",
+          },
+          { status: 502 },
+        );
+      }
+
+      return NextResponse.json({ ok: true, id: data?.id });
+    }
+
     const transporter = nodemailer.createTransport({
       host,
       port,

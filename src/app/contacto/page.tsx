@@ -5,16 +5,18 @@ import { contactoPage } from "@/content/es";
 
 export default function ContactoPage() {
   const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(
-    null,
-  );
+  const [status, setStatus] = useState<
+    | { kind: "success" | "warning" | "error"; message: string }
+    | null
+  >(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus(null);
     setIsSending(true);
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const payload = {
       nombre: String(formData.get("nombre") || ""),
       email: String(formData.get("email") || ""),
@@ -22,27 +24,64 @@ export default function ContactoPage() {
       mensaje: String(formData.get("mensaje") || ""),
     };
 
-    try {
-      const res = await fetch("/api/contacto", {
+    async function sendOnce() {
+      return await fetch("/api/contacto", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+    }
 
-      const data = (await res.json()) as { ok?: boolean; error?: string };
+    function sleep(ms: number) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
-      if (!res.ok || !data.ok) {
+    try {
+      let res: Response;
+      try {
+        res = await sendOnce();
+      } catch {
+        // Reintento único si hubo corte de red/connection reset,
+        // que puede ocurrir aunque el backend haya enviado el email.
+        await sleep(600);
+        res = await sendOnce();
+      }
+
+      let data: { ok?: boolean; error?: string } | null = null;
+      try {
+        data = (await res.json()) as { ok?: boolean; error?: string };
+      } catch {
+        data = null;
+      }
+
+      if (!res.ok) {
         setStatus({
-          ok: false,
+          kind: "error",
+          message: data?.error || "No se pudo enviar el mensaje.",
+        });
+        return;
+      }
+
+      if (data && data.ok === false) {
+        setStatus({
+          kind: "error",
           message: data.error || "No se pudo enviar el mensaje.",
         });
         return;
       }
 
-      event.currentTarget.reset();
-      setStatus({ ok: true, message: "Mensaje enviado correctamente." });
-    } catch {
-      setStatus({ ok: false, message: "Error de red al enviar el mensaje." });
+      form.reset();
+      setStatus({ kind: "success", message: "Mensaje enviado correctamente." });
+    } catch (error) {
+      setStatus({
+        kind: "warning",
+        message:
+          process.env.NODE_ENV === "development"
+            ? `No se pudo confirmar el envío por un problema de red. (${
+                error instanceof Error ? error.message : "Error desconocido"
+              }) Si te ha llegado el correo, ignora este aviso.`
+            : "No se pudo confirmar el envío por un problema de red. Si te ha llegado el correo, ignora este aviso.",
+      });
     } finally {
       setIsSending(false);
     }
@@ -155,7 +194,13 @@ export default function ContactoPage() {
 
           {status && (
             <p
-              className={`text-[18px] ${status.ok ? "text-[#00c48e]" : "text-[#ff8d8d]"}`}
+              className={`text-[18px] ${
+                status.kind === "success"
+                  ? "text-[#00c48e]"
+                  : status.kind === "error"
+                    ? "text-[#ff8d8d]"
+                    : "text-[#f3d37a]"
+              }`}
             >
               {status.message}
             </p>
