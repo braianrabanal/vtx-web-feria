@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { qualityPage } from "@/content/es";
+import Reveal from "@/components/reveal";
 
 export default function QualityPage() {
   return (
     <div className="space-y-12 md:space-y-14">
+      <Reveal>
       <header className="space-y-8 pt-6 md:pt-10">
         <h1
           style={{
@@ -29,7 +31,9 @@ export default function QualityPage() {
           {qualityPage.heroSubtitle}
         </p>
       </header>
+      </Reveal>
 
+      <Reveal delayMs={70}>
       <section className="-mx-5 bg-[#00c48e] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1fr_1fr]">
           <div className="px-6 py-7 md:px-9 md:py-8">
@@ -85,6 +89,7 @@ export default function QualityPage() {
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 }

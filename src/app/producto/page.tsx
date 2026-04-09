@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { producto } from "@/content/es";
+import Reveal from "@/components/reveal";
 import productoVideoRef from "../../../webadobe-boceto/pagina2/3.png";
 
 export default function ProductoPage() {
   return (
     <div className="space-y-12 md:space-y-14">
+      <Reveal>
       <header className="space-y-8 pt-6 md:pt-10">
         <h1
           style={{
@@ -31,12 +33,14 @@ export default function ProductoPage() {
           {producto.intro}
         </p>
       </header>
+      </Reveal>
 
+      <Reveal delayMs={60}>
       <section className="-mx-5 bg-[#151b2d] px-5 py-14 md:-mx-8 md:px-8">
         <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
           <Link
             href="/producto/chroma"
-            className="block rounded-md bg-[#efefef] px-6 py-7 transition hover:opacity-95 md:px-10 md:py-9"
+            className="block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
@@ -80,7 +84,7 @@ export default function ProductoPage() {
 
           <Link
             href="/producto/quality"
-            className="block rounded-md bg-[#efefef] px-6 py-7 transition hover:opacity-95 md:px-10 md:py-9"
+            className="block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
@@ -123,7 +127,9 @@ export default function ProductoPage() {
           </Link>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={90}>
       <section className="-mx-5 bg-[#efefef] md:-mx-8">
         <div className="relative mx-auto min-h-[520px] max-w-[1720px] overflow-hidden">
           <Image
@@ -147,6 +153,7 @@ export default function ProductoPage() {
           </p>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 }

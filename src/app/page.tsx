@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { home } from "@/content/es";
+import Reveal from "@/components/reveal";
 
 export default function Home() {
   return (
     <div className="space-y-12 md:space-y-14">
+      <Reveal delayMs={0}>
       <section className="space-y-8 pt-6 md:pt-10">
         <div className="max-w-[1120px] space-y-2">
           <h1
@@ -47,22 +49,24 @@ export default function Home() {
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href="/producto"
-            className="inline-flex items-center justify-center rounded-full bg-[#06b893] px-7 py-3 text-lg font-semibold text-white transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-[#06b893] px-7 py-3 text-lg font-semibold text-white transition duration-500 hover:scale-[1.01] hover:opacity-95 active:scale-[0.995]"
           >
             VER MÓDULOS
           </Link>
           <Link
             href="/contacto"
-            className="inline-flex items-center justify-center rounded-full bg-[#6c33a8] px-7 py-3 text-lg font-semibold text-white transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-[#6c33a8] px-7 py-3 text-lg font-semibold text-white transition duration-500 hover:scale-[1.01] hover:opacity-95 active:scale-[0.995]"
           >
             CONTACTO
           </Link>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={60}>
       <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-18">
         <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 md:px-10 md:py-9">
+          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image
@@ -97,7 +101,7 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 md:px-10 md:py-9">
+          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image src="/brand/visiortex/modules/quality/visiortex-quality-logoblack.png" alt="Quality" fill className="object-contain" />
@@ -128,7 +132,9 @@ export default function Home() {
           </article>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={80}>
       <section className="-mx-5 space-y-4 bg-[#efefef] px-5 py-8 md:-mx-8 md:px-8">
         <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "20px", color: "#55585f" }}>
           El proceso de Visiortex®
@@ -153,7 +159,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={100}>
       <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1.15fr_1fr]">
           <div className="px-6 py-8 md:px-9 md:py-10">
@@ -178,7 +186,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={120}>
       <section className="-mx-5 bg-[#efefef] px-5 py-10 md:-mx-8 md:px-8">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#171d31] md:grid-cols-[1.15fr_1fr]">
           <div className="px-6 py-8 text-[#f1f2f4] md:px-9 md:py-10">
@@ -204,7 +214,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={140}>
       <section className="-mx-5 bg-[#efefef] px-5 py-8 md:-mx-8 md:px-8">
         <div className="mx-auto max-w-[1720px] text-center">
           <h2
@@ -253,7 +265,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal delayMs={160}>
       <section className="-mx-5 bg-[#e8e8e8] px-5 py-10 md:-mx-8 md:px-8">
         <div className="mx-auto max-w-[1720px]">
           <h3
@@ -298,6 +312,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 }

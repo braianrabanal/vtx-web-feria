@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { contactoPage } from "@/content/es";
+import Reveal from "@/components/reveal";
 
 export default function ContactoPage() {
   const [isSending, setIsSending] = useState(false);
@@ -89,6 +90,7 @@ export default function ContactoPage() {
 
   return (
     <div className="space-y-10 md:space-y-12">
+      <Reveal>
       <header className="space-y-8 pt-6 md:pt-10">
         <h1
           style={{
@@ -114,7 +116,9 @@ export default function ContactoPage() {
           {contactoPage.intro}
         </p>
       </header>
+      </Reveal>
 
+      <Reveal delayMs={70}>
       <section className="-mx-5 bg-[#efefef] px-5 pb-10 md:-mx-8 md:px-8">
         <form
           onSubmit={handleSubmit}
@@ -187,7 +191,7 @@ export default function ContactoPage() {
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex h-12 items-center justify-center rounded-full bg-[#f1f2f4] px-8 text-[16px] font-semibold text-[#353945] transition hover:opacity-90 disabled:opacity-60 md:h-14 md:text-[20px]"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-[#f1f2f4] px-8 text-[16px] font-semibold text-[#353945] transition duration-500 hover:scale-[1.01] hover:opacity-95 active:scale-[0.995] disabled:opacity-60 md:h-14 md:text-[20px]"
           >
             {isSending ? "Enviando..." : contactoPage.submit}
           </button>
@@ -207,6 +211,7 @@ export default function ContactoPage() {
           )}
         </form>
       </section>
+      </Reveal>
     </div>
   );
 }
