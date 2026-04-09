@@ -11,7 +11,7 @@ export default function ProductoPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 700,
-            fontSize: "126px",
+            fontSize: "clamp(46px, 10vw, 126px)",
             lineHeight: "0.95",
             color: "#1A1E29",
           }}
@@ -23,8 +23,8 @@ export default function ProductoPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: "28px",
-            lineHeight: "1.2",
+            fontSize: "clamp(18px, 3.2vw, 28px)",
+            lineHeight: "1.25",
             color: "#4B4B4B",
           }}
         >
@@ -36,7 +36,7 @@ export default function ProductoPage() {
         <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
           <Link
             href="/producto/chroma"
-            className="block rounded-md bg-[#efefef] px-10 py-9 transition hover:opacity-95"
+            className="block rounded-md bg-[#efefef] px-6 py-7 transition hover:opacity-95 md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
@@ -53,8 +53,8 @@ export default function ProductoPage() {
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontWeight: 400,
-                fontSize: "22px",
-                lineHeight: "1.16",
+                fontSize: "clamp(18px, 3.4vw, 22px)",
+                lineHeight: "1.22",
                 color: "#4b4b4b",
               }}
             >
@@ -65,7 +65,7 @@ export default function ProductoPage() {
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontWeight: 700,
-                fontSize: "22px",
+                fontSize: "clamp(18px, 3.4vw, 22px)",
                 color: "#353945",
               }}
             >
@@ -80,7 +80,7 @@ export default function ProductoPage() {
 
           <Link
             href="/producto/quality"
-            className="block rounded-md bg-[#efefef] px-10 py-9 transition hover:opacity-95"
+            className="block rounded-md bg-[#efefef] px-6 py-7 transition hover:opacity-95 md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
@@ -97,8 +97,8 @@ export default function ProductoPage() {
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontWeight: 400,
-                fontSize: "22px",
-                lineHeight: "1.16",
+                fontSize: "clamp(18px, 3.4vw, 22px)",
+                lineHeight: "1.22",
                 color: "#4b4b4b",
               }}
             >
@@ -109,7 +109,7 @@ export default function ProductoPage() {
               style={{
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontWeight: 700,
-                fontSize: "22px",
+                fontSize: "clamp(18px, 3.4vw, 22px)",
                 color: "#353945",
               }}
             >
@@ -138,8 +138,8 @@ export default function ProductoPage() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 400,
-              fontSize: "40px",
-              lineHeight: "1.15",
+              fontSize: "clamp(20px, 4.6vw, 40px)",
+              lineHeight: "1.2",
               color: "#4b4b4b",
             }}
           >

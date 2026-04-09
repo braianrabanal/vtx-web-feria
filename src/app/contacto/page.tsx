@@ -94,7 +94,7 @@ export default function ContactoPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 700,
-            fontSize: "126px",
+            fontSize: "clamp(46px, 10vw, 126px)",
             lineHeight: "0.95",
             color: "#1A1E29",
           }}
@@ -106,8 +106,8 @@ export default function ContactoPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: "28px",
-            lineHeight: "1.2",
+            fontSize: "clamp(18px, 3.2vw, 28px)",
+            lineHeight: "1.25",
             color: "#4B4B4B",
           }}
         >
@@ -118,13 +118,13 @@ export default function ContactoPage() {
       <section className="-mx-5 bg-[#efefef] px-5 pb-10 md:-mx-8 md:px-8">
         <form
           onSubmit={handleSubmit}
-          className="mx-auto max-w-[1720px] space-y-6 rounded-md bg-[#171d31] px-10 py-9"
+          className="mx-auto max-w-[1720px] space-y-6 rounded-md bg-[#171d31] px-6 py-7 md:px-10 md:py-9"
         >
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
               <label
                 htmlFor="nombre"
-                className="text-[22px] font-semibold text-[#f1f2f4]"
+                className="text-[18px] font-semibold text-[#f1f2f4] md:text-[22px]"
               >
                 {contactoPage.nombre}
               </label>
@@ -133,13 +133,13 @@ export default function ContactoPage() {
                 name="nombre"
                 type="text"
                 required
-                className="h-16 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[20px] text-[#f1f2f4] outline-none"
+                className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
               />
             </div>
             <div className="space-y-2">
               <label
                 htmlFor="email"
-                className="text-[22px] font-semibold text-[#f1f2f4]"
+                className="text-[18px] font-semibold text-[#f1f2f4] md:text-[22px]"
               >
                 {contactoPage.email}
               </label>
@@ -148,7 +148,7 @@ export default function ContactoPage() {
                 name="email"
                 type="email"
                 required
-                className="h-16 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[20px] text-[#f1f2f4] outline-none"
+                className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
               />
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function ContactoPage() {
           <div className="space-y-2">
             <label
               htmlFor="empresa"
-              className="text-[22px] font-semibold text-[#f1f2f4]"
+              className="text-[18px] font-semibold text-[#f1f2f4] md:text-[22px]"
             >
               {contactoPage.empresa}
             </label>
@@ -164,14 +164,14 @@ export default function ContactoPage() {
               id="empresa"
               name="empresa"
               type="text"
-              className="h-16 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[20px] text-[#f1f2f4] outline-none"
+              className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
             />
           </div>
 
           <div className="space-y-2">
             <label
               htmlFor="mensaje"
-              className="text-[22px] font-semibold text-[#f1f2f4]"
+              className="text-[18px] font-semibold text-[#f1f2f4] md:text-[22px]"
             >
               {contactoPage.mensaje}
             </label>
@@ -180,21 +180,21 @@ export default function ContactoPage() {
               name="mensaje"
               rows={7}
               required
-              className="w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 py-3 text-[20px] text-[#f1f2f4] outline-none"
+              className="w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 py-3 text-[16px] text-[#f1f2f4] outline-none md:text-[20px]"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSending}
-            className="inline-flex h-14 items-center justify-center rounded-full bg-[#f1f2f4] px-8 text-[20px] font-semibold text-[#353945] transition hover:opacity-90 disabled:opacity-60"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-[#f1f2f4] px-8 text-[16px] font-semibold text-[#353945] transition hover:opacity-90 disabled:opacity-60 md:h-14 md:text-[20px]"
           >
             {isSending ? "Enviando..." : contactoPage.submit}
           </button>
 
           {status && (
             <p
-              className={`text-[18px] ${
+              className={`text-[14px] md:text-[18px] ${
                 status.kind === "success"
                   ? "text-[#00c48e]"
                   : status.kind === "error"

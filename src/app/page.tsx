@@ -12,9 +12,9 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 700,
-              fontSize: "138px",
-              letterSpacing: "2px",
-              lineHeight: "130px",
+              fontSize: "clamp(56px, 10.5vw, 138px)",
+              letterSpacing: "clamp(0.5px, 0.25vw, 2px)",
+              lineHeight: "clamp(54px, 9.8vw, 130px)",
             }}
           >
             Visiortex®
@@ -23,10 +23,10 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 700,
-              fontSize: "138px",
+              fontSize: "clamp(48px, 10.5vw, 138px)",
               color: "#95959586",
-              letterSpacing: "4px",
-              lineHeight: "130px",
+              letterSpacing: "clamp(1px, 0.35vw, 4px)",
+              lineHeight: "clamp(54px, 9.8vw, 130px)",
             }}
           >
             Inspección de alta velocidad.
@@ -37,8 +37,9 @@ export default function Home() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: "28px",
+            fontSize: "clamp(18px, 3.2vw, 28px)",
             color: "#4B4B4B",
+            lineHeight: "1.25",
           }}
         >
           {home.hero.subtitle}
@@ -59,9 +60,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="-mx-5 bg-[#151b2d] px-5 py-14 md:-mx-8 md:px-8 md:py-18">
+      <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-18">
         <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-10 py-9">
+          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image
@@ -74,20 +75,20 @@ export default function Home() {
             </div>
             <div className="mt-8 border-t border-[#737985]" />
             <div className="mt-8 space-y-6 text-[#4d4f56]">
-              <p className="text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.18" }}>
+              <p className="text-[18px] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "inherit", lineHeight: "1.22" }}>
                 {home.chroma.text.split("\n\n")[0]}
               </p>
-              <p className="text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.18" }}>
+              <p className="text-[18px] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "inherit", lineHeight: "1.22" }}>
                 {home.chroma.text.split("\n\n")[1]}
               </p>
             </div>
-            <ul className="mt-6 space-y-1.5 text-[22px] leading-[1.22] text-[#6c33a8]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400 }}>
+            <ul className="mt-6 space-y-1.5 text-[18px] leading-[1.22] text-[#6c33a8] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400 }}>
               {home.chroma.bullets.map((b) => (
                 <li key={b}>• {b}</li>
               ))}
             </ul>
             <div className="mt-6">
-              <Link href="/producto/chroma" className="text-[22px] font-bold text-[#3f434d]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
+              <Link href="/producto/chroma" className="text-[18px] font-bold text-[#3f434d] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
                 <span className="inline-flex items-center gap-2">
                   Ver Chroma
                   <span className="text-[18px] font-medium text-[#4f5560]">⟶</span>
@@ -96,7 +97,7 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-10 py-9">
+          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image src="/brand/visiortex/modules/quality/visiortex-quality-logoblack.png" alt="Quality" fill className="object-contain" />
@@ -104,20 +105,20 @@ export default function Home() {
             </div>
             <div className="mt-8 border-t border-[#737985]" />
             <div className="mt-8 space-y-6 text-[#4d4f56]">
-              <p className="text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.18" }}>
+              <p className="text-[18px] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "inherit", lineHeight: "1.22" }}>
                 {home.quality.text.split("\n\n")[0]}
               </p>
-              <p className="text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.18" }}>
+              <p className="text-[18px] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "inherit", lineHeight: "1.22" }}>
                 {home.quality.text.split("\n\n")[1]}
               </p>
             </div>
-            <ul className="mt-6 space-y-1.5 text-[22px] leading-[1.22] text-[#06b893]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400 }}>
+            <ul className="mt-6 space-y-1.5 text-[18px] leading-[1.22] text-[#06b893] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400 }}>
               {home.quality.bullets.map((b) => (
                 <li key={b}>• {b}</li>
               ))}
             </ul>
             <div className="mt-6">
-              <Link href="/producto/quality" className="text-[22px] font-bold text-[#2e3340]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
+              <Link href="/producto/quality" className="text-[18px] font-bold text-[#2e3340] md:text-[22px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 }}>
                 <span className="inline-flex items-center gap-2">
                   Ver Quality
                   <span className="text-[18px] font-medium text-[#4f5560]">⟶</span>
@@ -153,18 +154,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="-mx-5 bg-[#151b2d] px-5 py-12 md:-mx-8 md:px-8">
+      <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1.15fr_1fr]">
-          <div className="px-9 py-10">
-            <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "34px", color: "#4f535a" }}>Beneficios</h2>
+          <div className="px-6 py-8 md:px-9 md:py-10">
+            <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(24px, 5.2vw, 34px)", color: "#4f535a" }}>Beneficios</h2>
             <div className="mt-8 border-t-2 border-[#7f858e]" />
-            <p className="mt-8 max-w-[760px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.2", color: "#4b4b4b" }}>
+            <p className="mt-6 max-w-[760px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "clamp(18px, 3.6vw, 22px)", lineHeight: "1.25", color: "#4b4b4b" }}>
               {home.beneficios.intro}
             </p>
             <div className="mt-8 border-t-2 border-[#7f858e]" />
             <div className="mt-3 space-y-0">
               {[0, 2, 1, 3].map((idx) => (
-                <p key={home.beneficios.items[idx]} className="border-b-2 border-[#7f858e] py-2" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", color: "#4b4b4b" }}>
+                <p key={home.beneficios.items[idx]} className="border-b-2 border-[#7f858e] py-2" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "clamp(18px, 3.6vw, 22px)", color: "#4b4b4b" }}>
                   {home.beneficios.items[idx]}
                 </p>
               ))}
@@ -180,18 +181,18 @@ export default function Home() {
 
       <section className="-mx-5 bg-[#efefef] px-5 py-10 md:-mx-8 md:px-8">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#171d31] md:grid-cols-[1.15fr_1fr]">
-          <div className="px-9 py-10 text-[#f1f2f4]">
-            <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "34px", color: "#f1f2f4" }}>{home.retos.title}</h2>
+          <div className="px-6 py-8 text-[#f1f2f4] md:px-9 md:py-10">
+            <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(24px, 5.2vw, 34px)", color: "#f1f2f4" }}>{home.retos.title}</h2>
             <div className="mt-8 border-t-2 border-[#c8ccd3]" />
-            <p className="mt-8 max-w-[760px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.2", color: "#f1f2f4" }}>
+            <p className="mt-6 max-w-[760px]" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "clamp(18px, 3.6vw, 22px)", lineHeight: "1.25", color: "#f1f2f4" }}>
               {home.retos.intro}
             </p>
             <div className="mt-8 border-t-2 border-[#c8ccd3]" />
             <div className="mt-3 space-y-0">
               {home.retos.items.map((item) => (
                 <div key={item.title} className="border-b-2 border-[#c8ccd3] py-3">
-                  <h3 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "22px", color: "#f1f2f4" }}>{item.title}</h3>
-                  <p style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "22px", lineHeight: "1.2", color: "#f1f2f4" }}>{item.text}</p>
+                  <h3 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(18px, 3.6vw, 22px)", color: "#f1f2f4" }}>{item.title}</h3>
+                  <p style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "clamp(18px, 3.6vw, 22px)", lineHeight: "1.25", color: "#f1f2f4" }}>{item.text}</p>
                 </div>
               ))}
             </div>
@@ -210,7 +211,7 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 700,
-              fontSize: "30px",
+              fontSize: "clamp(22px, 4.6vw, 30px)",
               color: "#4f535a",
             }}
           >
@@ -221,8 +222,9 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 400,
-              fontSize: "20px",
+              fontSize: "clamp(16px, 3.7vw, 20px)",
               color: "#4b4b4b",
+              lineHeight: "1.25",
             }}
           >
             {home.impacto.subtitle}
@@ -238,7 +240,7 @@ export default function Home() {
                     style={{
                       fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                       fontWeight: 700,
-                      fontSize: "24px",
+                      fontSize: "clamp(18px, 4vw, 24px)",
                       color: "#4f535a",
                     }}
                   >
@@ -258,7 +260,7 @@ export default function Home() {
             style={{
               fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
               fontWeight: 700,
-              fontSize: "30px",
+              fontSize: "clamp(22px, 4.6vw, 30px)",
               color: "#4f535a",
             }}
           >

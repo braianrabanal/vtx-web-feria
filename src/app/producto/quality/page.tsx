@@ -9,7 +9,7 @@ export default function QualityPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 700,
-            fontSize: "126px",
+            fontSize: "clamp(46px, 10vw, 126px)",
             lineHeight: "0.95",
             color: "#1A1E29",
           }}
@@ -21,8 +21,8 @@ export default function QualityPage() {
           style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: "28px",
-            lineHeight: "1.2",
+            fontSize: "clamp(18px, 3.2vw, 28px)",
+            lineHeight: "1.25",
             color: "#4B4B4B",
           }}
         >
@@ -30,9 +30,9 @@ export default function QualityPage() {
         </p>
       </header>
 
-      <section className="-mx-5 bg-[#00c48e] px-5 py-12 md:-mx-8 md:px-8">
+      <section className="-mx-5 bg-[#00c48e] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
         <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1fr_1fr]">
-          <div className="px-9 py-8">
+          <div className="px-6 py-7 md:px-9 md:py-8">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image
@@ -47,20 +47,26 @@ export default function QualityPage() {
 
             <div className="mt-8 space-y-6 text-[#4b4b4b]">
               <div>
-                <h3 className="text-[22px] font-bold">¿Qué es Quality?</h3>
-                <p className="mt-1 text-[22px] leading-[1.18]">
+                <h3 className="text-[18px] font-bold md:text-[22px]">
+                  ¿Qué es Quality?
+                </h3>
+                <p className="mt-1 text-[18px] leading-[1.22] md:text-[22px] md:leading-[1.18]">
                   {qualityPage.queEsBody}
                 </p>
               </div>
               <div>
-                <h3 className="text-[22px] font-bold">¿Cómo funciona?</h3>
-                <p className="mt-1 text-[22px] leading-[1.18]">
+                <h3 className="text-[18px] font-bold md:text-[22px]">
+                  ¿Cómo funciona?
+                </h3>
+                <p className="mt-1 text-[18px] leading-[1.22] md:text-[22px] md:leading-[1.18]">
                   {qualityPage.comoFuncionaBody}
                 </p>
               </div>
               <div>
-                <h3 className="text-[22px] font-bold">¿Qué aporta?</h3>
-                <ul className="mt-1 list-disc space-y-1 pl-8 text-[22px] leading-[1.18]">
+                <h3 className="text-[18px] font-bold md:text-[22px]">
+                  ¿Qué aporta?
+                </h3>
+                <ul className="mt-1 list-disc space-y-1 pl-6 text-[18px] leading-[1.22] md:pl-8 md:text-[22px] md:leading-[1.18]">
                   {qualityPage.queAportaBullets.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -69,7 +75,7 @@ export default function QualityPage() {
             </div>
           </div>
 
-          <div className="relative min-h-[680px]">
+          <div className="relative min-h-[360px] md:min-h-[680px]">
             <Image
               src="/images-web/pagina4imagen1.png"
               alt="Interfaz Quality en operación"

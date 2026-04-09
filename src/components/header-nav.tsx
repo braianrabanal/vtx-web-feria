@@ -16,7 +16,7 @@ export default function HeaderNav() {
 
   return (
     <nav
-      className="hidden items-center gap-9 md:flex"
+      className="flex w-full items-center gap-4 overflow-x-auto whitespace-nowrap pb-1 md:w-auto md:gap-9 md:overflow-visible md:pb-0"
       style={{
         fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
         fontWeight: 500,
@@ -34,7 +34,7 @@ export default function HeaderNav() {
           <Link
             key={link.href}
             href={link.href}
-            className="uppercase hover:text-[#1b2130]"
+            className="uppercase hover:text-[#1b2130] text-[16px] md:text-[20px]"
             style={
               isActive
                 ? {
