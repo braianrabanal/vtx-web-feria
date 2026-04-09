@@ -39,7 +39,8 @@ export default function RootLayout({
       <body
         className={`${glorida.variable} ${performa.variable} bg-[#f3f3f4] text-[#1b2130] antialiased`}
       >
-        <div className="relative -left-[17px] -top-[21px] flex h-[1080px] w-[1920px] flex-col bg-[#f3f3f4] text-[#1b2130] opacity-100">
+        <div className="vtx-viewport">
+          <div className="vtx-canvas">
           <header className="z-40 bg-[#f3f3f4]">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-6 md:px-8">
               <HeaderLogo />
@@ -65,6 +66,7 @@ export default function RootLayout({
               </p>
             </div>
           </footer>
+          </div>
         </div>
       </body>
     </html>

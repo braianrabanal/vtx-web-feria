@@ -29,3 +29,24 @@ body {
   font-family: var(--font-heading);
 }
 
+/* Canvas fijo (1920x1080) escalado para encajar en cualquier pantalla */
+.vtx-viewport {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.vtx-canvas {
+  width: 1920px;
+  min-height: 1080px;
+  background: #f3f3f4;
+  color: #1b2130;
+  opacity: 1;
+  transform-origin: top center;
+  transform: scale(min(1, calc(100vw / 1920)));
+}
+
