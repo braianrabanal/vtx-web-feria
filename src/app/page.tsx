@@ -181,7 +181,7 @@ export default function Home() {
           </div>
           <div className="flex p-3">
             <div className="relative h-full min-h-[500px] w-full overflow-hidden rounded-md">
-              <Image src="/images-web/pagina1imagen1.png" alt="Beneficios VISIORTEX en planta" fill className="object-cover object-left md:object-right" />
+              <Image src="/images-web/pagina1imagen1.png" alt="Beneficios VISIORTEX en planta" fill className="object-cover object-[30%_center] md:object-right" />
             </div>
           </div>
         </div>
