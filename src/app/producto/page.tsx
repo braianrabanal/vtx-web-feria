@@ -36,11 +36,11 @@ export default function ProductoPage() {
       </Reveal>
 
       <Reveal delayMs={60}>
-      <section className="-mx-5 bg-[#151b2d] px-5 py-14 md:-mx-8 md:px-8">
+      <section className="vtx-section-wash -mx-5 bg-[#151b2d] px-5 py-14 md:-mx-8 md:px-8">
         <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
           <Link
             href="/producto/chroma"
-            className="block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
+            className="vtx-panel block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
@@ -84,7 +84,7 @@ export default function ProductoPage() {
 
           <Link
             href="/producto/quality"
-            className="block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
+            className="vtx-panel block rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9"
           >
             <div className="flex justify-center">
               <div className="relative h-14 w-72">

@@ -122,7 +122,7 @@ export default function ContactoPage() {
       <section className="-mx-5 bg-[#efefef] px-5 pb-10 md:-mx-8 md:px-8">
         <form
           onSubmit={handleSubmit}
-          className="mx-auto max-w-[1720px] space-y-6 rounded-md bg-[#171d31] px-6 py-7 md:px-10 md:py-9"
+          className="vtx-panel mx-auto max-w-[1720px] space-y-6 rounded-md bg-[#171d31] px-6 py-7 md:px-10 md:py-9"
         >
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
@@ -137,7 +137,7 @@ export default function ContactoPage() {
                 name="nombre"
                 type="text"
                 required
-                className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
+                className="vtx-input h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
               />
             </div>
             <div className="space-y-2">
@@ -152,7 +152,7 @@ export default function ContactoPage() {
                 name="email"
                 type="email"
                 required
-                className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
+                className="vtx-input h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function ContactoPage() {
               id="empresa"
               name="empresa"
               type="text"
-              className="h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
+              className="vtx-input h-14 w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 text-[16px] text-[#f1f2f4] outline-none md:h-16 md:text-[20px]"
             />
           </div>
 
@@ -184,7 +184,7 @@ export default function ContactoPage() {
               name="mensaje"
               rows={7}
               required
-              className="w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 py-3 text-[16px] text-[#f1f2f4] outline-none md:text-[20px]"
+              className="vtx-input w-full rounded-xl border border-[#8f95a0] bg-[#3d4250] px-4 py-3 text-[16px] text-[#f1f2f4] outline-none md:text-[20px]"
             />
           </div>
 

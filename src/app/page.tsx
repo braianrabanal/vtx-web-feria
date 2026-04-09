@@ -64,9 +64,9 @@ export default function Home() {
       </Reveal>
 
       <Reveal delayMs={60}>
-      <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-18">
-        <div className="mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
+      <section className="vtx-section-wash -mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-18">
+        <div className="relative mx-auto grid max-w-[1720px] gap-5 md:grid-cols-2">
+          <article className="vtx-panel flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image
@@ -101,7 +101,7 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
+          <article className="vtx-panel flex min-h-[590px] flex-col rounded-md bg-[#efefef] px-6 py-7 transition duration-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] md:px-10 md:py-9">
             <div className="flex justify-center">
               <div className="relative h-14 w-72">
                 <Image src="/brand/visiortex/modules/quality/visiortex-quality-logoblack.png" alt="Quality" fill className="object-contain" />
@@ -162,8 +162,8 @@ export default function Home() {
       </Reveal>
 
       <Reveal delayMs={100}>
-      <section className="-mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
-        <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1.15fr_1fr]">
+      <section className="vtx-section-wash -mx-5 bg-[#151b2d] px-5 py-10 md:-mx-8 md:px-8 md:py-12">
+        <div className="vtx-panel relative mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#efefef] md:grid-cols-[1.15fr_1fr]">
           <div className="px-6 py-8 md:px-9 md:py-10">
             <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(24px, 5.2vw, 34px)", color: "#4f535a" }}>Beneficios</h2>
             <div className="mt-8 border-t-2 border-[#7f858e]" />
@@ -190,7 +190,7 @@ export default function Home() {
 
       <Reveal delayMs={120}>
       <section className="-mx-5 bg-[#efefef] px-5 py-10 md:-mx-8 md:px-8">
-        <div className="mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#171d31] md:grid-cols-[1.15fr_1fr]">
+        <div className="vtx-panel mx-auto grid max-w-[1720px] overflow-hidden rounded-md bg-[#171d31] md:grid-cols-[1.15fr_1fr]">
           <div className="px-6 py-8 text-[#f1f2f4] md:px-9 md:py-10">
             <h2 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(24px, 5.2vw, 34px)", color: "#f1f2f4" }}>{home.retos.title}</h2>
             <div className="mt-8 border-t-2 border-[#c8ccd3]" />
@@ -246,7 +246,7 @@ export default function Home() {
               (metric) => (
                 <div
                   key={metric.label}
-                  className="rounded-2xl border border-[#8e949d] bg-transparent px-5 py-3 text-left"
+                  className="rounded-2xl border border-[#8e949d] bg-[#ffffff26] px-5 py-3 text-left backdrop-blur-[1px]"
                 >
                   <p
                     style={{
