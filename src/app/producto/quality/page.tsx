@@ -79,13 +79,23 @@ export default function QualityPage() {
             </div>
           </div>
 
-          <div className="relative min-h-[360px] md:min-h-[680px]">
-            <Image
-              src="/images-web/pagina4imagen1.png"
-              alt="Interfaz Quality en operación"
-              fill
-              className="object-cover object-right"
-            />
+          <div className="grid min-h-[360px] grid-rows-2 gap-2 bg-[#f7f7f7] p-2 md:min-h-[680px] md:gap-3 md:p-3">
+            <div className="relative min-h-[170px] overflow-hidden rounded-md border border-[#d8d8d8]">
+              <Image
+                src="/images-web/pagina4imagen1.png"
+                alt="Interfaz Quality en operación"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="relative min-h-[170px] overflow-hidden rounded-md border border-[#d8d8d8]">
+              <Image
+                src="/images-web/defecto_webvtx.png"
+                alt="Mapa térmico de defecto detectado"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
