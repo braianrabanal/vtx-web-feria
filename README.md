@@ -27,6 +27,6 @@ Para configurar el envío real de correos desde el formulario de `Contacto`, rev
 2. En Vercel crea un **New Project** y selecciona este repo.
 3. Deja como comandos por defecto:
    - Build: `pnpm build`
-   - Start: `pnpm start`
-
+   - Start: `pnpm start` 
+.
 La raíz del proyecto es este directorio (no hay ya subcarpeta `web`).
