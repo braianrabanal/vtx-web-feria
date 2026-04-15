@@ -161,4 +161,33 @@ export const contactoPage = {
   submit: "Enviar mensaje",
 };
 
+export const ui = {
+  footer: "VISIORTEX | VTX Analytics S.L",
+  languageLabel: "Idioma",
+  languageSpanish: "ES",
+  languageEnglish: "EN",
+  home: {
+    modules: "VER MODULOS",
+    contact: "CONTACTO",
+    processTitle: "El proceso de Visiortex",
+    step: "Paso",
+    seeChroma: "Ver Chroma",
+    seeQuality: "Ver Quality",
+    collaborators: "Colaboradores",
+  },
+  product: {
+    title: "Producto",
+    seeChroma: "Ver Chroma",
+    seeQuality: "Ver Quality",
+    videoCaption: "(Video) Prototipo antiguo | Asi empezo Visiortex.",
+  },
+  contact: {
+    sending: "Enviando...",
+    success: "Mensaje enviado correctamente.",
+    sendError: "No se pudo enviar el mensaje.",
+    networkWarning:
+      "No se pudo confirmar el envio por un problema de red. Si te ha llegado el correo, ignora este aviso.",
+  },
+};
+
 

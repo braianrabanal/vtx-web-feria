@@ -2,17 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { Locale } from "@/i18n/config";
 
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/producto", label: "Producto" },
-  { href: "/producto/chroma", label: "Chroma" },
-  { href: "/producto/quality", label: "Quality" },
-  { href: "/contacto", label: "Contacto" },
-];
+type Props = {
+  locale: Locale;
+  labels: {
+    inicio: string;
+    producto: string;
+    chroma: string;
+    quality: string;
+    contacto: string;
+  };
+};
 
-export default function HeaderNav() {
+export default function HeaderNav({ locale, labels }: Props) {
   const pathname = usePathname();
+  const navLinks = [
+    { href: `/${locale}`, label: labels.inicio },
+    { href: `/${locale}/producto`, label: labels.producto },
+    { href: `/${locale}/producto/chroma`, label: labels.chroma },
+    { href: `/${locale}/producto/quality`, label: labels.quality },
+    { href: `/${locale}/contacto`, label: labels.contacto },
+  ];
 
   return (
     <nav
@@ -26,8 +37,8 @@ export default function HeaderNav() {
     >
       {navLinks.map((link) => {
         const isActive =
-          link.href === "/"
-            ? pathname === "/"
+          link.href === `/${locale}`
+            ? pathname === `/${locale}`
             : pathname === link.href || pathname.startsWith(`${link.href}/`);
 
         return (
