@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { home } from "@/content/es";
 import Reveal from "@/components/reveal";
+import ValidatorsMarquee from "@/components/validators-marquee";
 
 export default function Home() {
   return (
@@ -280,45 +281,60 @@ export default function Home() {
           >
             Validadores Tecnológicos
           </h3>
-          <div className="mt-7 rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
-            <div className="grid gap-6">
-              <div className="grid grid-cols-2 items-center gap-6">
-                {[
-                  {
-                    src: "/images-web/logo-ctc-gris.png",
-                    alt: "Logo CTC",
-                  },
-                  {
-                    src: "/images-web/logotextilsantanderina.png",
-                    alt: "Logo Textil Santanderina",
-                  },
-                ].map((logo) => (
-                  <div key={logo.src} className="relative h-14 w-full md:h-16">
-                    <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
-                  </div>
-                ))}
-              </div>
+          <div className="mt-7">
+            <div className="md:hidden rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
+              <div className="grid gap-6">
+                <div className="grid grid-cols-2 items-center gap-6">
+                  {[
+                    {
+                      src: "/images-web/logo-ctc-gris.png",
+                      alt: "Logo CTC",
+                    },
+                    {
+                      src: "/images-web/logotextilsantanderina.png",
+                      alt: "Logo Textil Santanderina",
+                    },
+                  ].map((logo) => (
+                    <div key={logo.src} className="relative h-14 w-full">
+                      <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                    </div>
+                  ))}
+                </div>
 
-              <div className="grid grid-cols-3 items-center gap-6">
-                {[
-                  {
-                    src: "/images-web/uc.png",
-                    alt: "Logo Universidad de Cantabria",
-                  },
-                  {
-                    src: "/images-web/UBU_logo.png",
-                    alt: "Logo Universidad de Burgos",
-                  },
-                  {
-                    src: "/images-web/inade.png",
-                    alt: "Logo INADE",
-                  },
-                ].map((logo) => (
-                  <div key={logo.src} className="relative h-12 w-full md:h-14">
-                    <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
-                  </div>
-                ))}
+                <div className="grid grid-cols-3 items-center gap-6">
+                  {[
+                    {
+                      src: "/images-web/uc.png",
+                      alt: "Logo Universidad de Cantabria",
+                    },
+                    {
+                      src: "/images-web/UBU_logo.png",
+                      alt: "Logo Universidad de Burgos",
+                    },
+                    {
+                      src: "/images-web/inade.png",
+                      alt: "Logo INADE",
+                    },
+                  ].map((logo) => (
+                    <div key={logo.src} className="relative h-12 w-full">
+                      <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                    </div>
+                  ))}
+                </div>
               </div>
+            </div>
+
+            <div className="hidden md:block">
+              <ValidatorsMarquee
+                items={[
+                  { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
+                  { src: "/images-web/logo-ctc-gris.png", alt: "Logo CTC" },
+                  { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
+                  { src: "/images-web/logotextilsantanderina.png", alt: "Logo Textil Santanderina" },
+                  { src: "/images-web/inade.png", alt: "Logo INADE" },
+                ]}
+                speedSeconds={30}
+              />
             </div>
           </div>
         </div>

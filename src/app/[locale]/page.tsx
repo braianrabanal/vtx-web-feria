@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/reveal";
+import ValidatorsMarquee from "@/components/validators-marquee";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
@@ -131,45 +132,60 @@ export default async function Home({ params }: Props) {
         <section className="-mx-5 bg-[#e8e8e8] px-5 py-10 md:-mx-8 md:px-8">
           <div className="mx-auto max-w-[1720px]">
             <h3 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(22px, 4.6vw, 30px)", color: "#4f535a" }}>{ui.home.collaborators}</h3>
-            <div className="mt-7 rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
-              <div className="grid gap-6">
-                <div className="grid grid-cols-2 items-center gap-6">
-                  {[
-                    {
-                      src: "/images-web/logo-ctc-gris.png",
-                      alt: "Logo CTC",
-                    },
-                    {
-                      src: "/images-web/logotextilsantanderina.png",
-                      alt: "Logo Textil Santanderina",
-                    },
-                  ].map((logo) => (
-                    <div key={logo.src} className="relative h-14 w-full md:h-16">
-                      <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
-                    </div>
-                  ))}
-                </div>
+            <div className="mt-7">
+              <div className="md:hidden rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
+                <div className="grid gap-6">
+                  <div className="grid grid-cols-2 items-center gap-6">
+                    {[
+                      {
+                        src: "/images-web/logo-ctc-gris.png",
+                        alt: "Logo CTC",
+                      },
+                      {
+                        src: "/images-web/logotextilsantanderina.png",
+                        alt: "Logo Textil Santanderina",
+                      },
+                    ].map((logo) => (
+                      <div key={logo.src} className="relative h-14 w-full">
+                        <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                      </div>
+                    ))}
+                  </div>
 
-                <div className="grid grid-cols-3 items-center gap-6">
-                  {[
-                    {
-                      src: "/images-web/uc.png",
-                      alt: "Logo Universidad de Cantabria",
-                    },
-                    {
-                      src: "/images-web/UBU_logo.png",
-                      alt: "Logo Universidad de Burgos",
-                    },
-                    {
-                      src: "/images-web/inade.png",
-                      alt: "Logo INADE",
-                    },
-                  ].map((logo) => (
-                    <div key={logo.src} className="relative h-12 w-full md:h-14">
-                      <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
-                    </div>
-                  ))}
+                  <div className="grid grid-cols-3 items-center gap-6">
+                    {[
+                      {
+                        src: "/images-web/uc.png",
+                        alt: "Logo Universidad de Cantabria",
+                      },
+                      {
+                        src: "/images-web/UBU_logo.png",
+                        alt: "Logo Universidad de Burgos",
+                      },
+                      {
+                        src: "/images-web/inade.png",
+                        alt: "Logo INADE",
+                      },
+                    ].map((logo) => (
+                      <div key={logo.src} className="relative h-12 w-full">
+                        <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </div>
+
+              <div className="hidden md:block">
+                <ValidatorsMarquee
+                  items={[
+                    { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
+                    { src: "/images-web/logo-ctc-gris.png", alt: "Logo CTC" },
+                    { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
+                    { src: "/images-web/logotextilsantanderina.png", alt: "Logo Textil Santanderina" },
+                    { src: "/images-web/inade.png", alt: "Logo INADE" },
+                  ]}
+                  speedSeconds={30}
+                />
               </div>
             </div>
           </div>
