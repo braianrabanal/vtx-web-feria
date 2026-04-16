@@ -178,10 +178,10 @@ export default async function Home({ params }: Props) {
               <div className="hidden md:block">
                 <ValidatorsMarquee
                   items={[
-                    { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
                     { src: "/images-web/logo-ctc-gris.png", alt: "Logo CTC" },
-                    { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
                     { src: "/images-web/logotextilsantanderina.png", alt: "Logo Textil Santanderina" },
+                    { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
+                    { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
                     { src: "/images-web/inade.png", alt: "Logo INADE" },
                   ]}
                   speedSeconds={30}

@@ -14,7 +14,7 @@ export default function ValidatorsMarquee({ items, speedSeconds = 26 }: Props) {
 
   return (
     <div
-      className="relative h-20 w-full overflow-hidden rounded-xl border border-[#c0c3c8] bg-[#f2f2f2]"
+      className="relative h-20 w-full overflow-hidden rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] md:h-28"
       aria-label="Carrusel infinito de validadores tecnológicos"
     >
       <div
@@ -36,7 +36,7 @@ export default function ValidatorsMarquee({ items, speedSeconds = 26 }: Props) {
         {trackItems.map((item, idx) => (
           <div
             key={`${item.src}-${idx}`}
-            className="relative mx-6 h-12 w-56 flex-none"
+            className="relative mx-3 h-12 w-56 flex-none md:mx-4 md:h-24 md:w-96"
           >
             <Image src={item.src} alt={item.alt} fill className="object-contain" />
           </div>
