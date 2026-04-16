@@ -171,7 +171,7 @@ export const ui = {
     step: "Step",
     seeChroma: "See Chroma",
     seeQuality: "See Quality",
-    collaborators: "Partners",
+    collaborators: "Technology Validators",
   },
   product: {
     title: "Product",

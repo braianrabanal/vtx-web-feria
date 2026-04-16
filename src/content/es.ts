@@ -173,7 +173,7 @@ export const ui = {
     step: "Paso",
     seeChroma: "Ver Chroma",
     seeQuality: "Ver Quality",
-    collaborators: "Colaboradores",
+    collaborators: "Validadores Tecnológicos",
   },
   product: {
     title: "Producto",

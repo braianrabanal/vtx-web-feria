@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { home } from "@/content/es";
 import Reveal from "@/components/reveal";
+import CollaboratorsCarousel from "@/components/collaborators-carousel";
 
 export default function Home() {
   return (
@@ -278,37 +279,45 @@ export default function Home() {
               color: "#4f535a",
             }}
           >
-            Colaboradores
+            Validadores Tecnológicos
           </h3>
-          <div className="mt-7 rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
-            <div className="grid items-center gap-0 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
-              <div className="relative mx-auto h-24 w-full max-w-[340px]">
-                <Image
-                  src="/images-web/uc.png"
-                  alt="Logo Universidad de Cantabria"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="hidden h-16 w-px bg-[#b4b8bf] md:block" />
-              <div className="relative mx-auto h-28 w-full max-w-[380px]">
-                <Image
-                  src="/images-web/logo-ctc-gris.png"
-                  alt="Logo CTC"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="hidden h-16 w-px bg-[#b4b8bf] md:block" />
-              <div className="relative mx-auto h-24 w-full max-w-[340px]">
-                <Image
-                  src="/images-web/UBU_logo.png"
-                  alt="Logo Universidad de Burgos"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+          <div className="mt-7">
+            <CollaboratorsCarousel
+              items={[
+                {
+                  src: "/images-web/uc.png",
+                  alt: "Logo Universidad de Cantabria",
+                  width: 520,
+                  height: 220,
+                },
+                {
+                  src: "/images-web/logo-ctc-gris.png",
+                  alt: "Logo CTC",
+                  width: 520,
+                  height: 220,
+                },
+                {
+                  src: "/images-web/UBU_logo.png",
+                  alt: "Logo Universidad de Burgos",
+                  width: 520,
+                  height: 220,
+                },
+                {
+                  src: "/images-web/logotextilsantanderina.png",
+                  alt: "Logo Textil Santanderina",
+                  width: 520,
+                  height: 220,
+                },
+                {
+                  src: "/images-web/inade.png",
+                  alt: "Logo INADE",
+                  width: 520,
+                  height: 220,
+                },
+              ]}
+              repeatsPerHalf={7}
+              speedSeconds={500}
+            />
           </div>
         </div>
       </section>
