@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/reveal";
-import CollaboratorsCarousel from "@/components/collaborators-carousel";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
@@ -132,43 +131,30 @@ export default async function Home({ params }: Props) {
         <section className="-mx-5 bg-[#e8e8e8] px-5 py-10 md:-mx-8 md:px-8">
           <div className="mx-auto max-w-[1720px]">
             <h3 style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700, fontSize: "clamp(22px, 4.6vw, 30px)", color: "#4f535a" }}>{ui.home.collaborators}</h3>
-            <div className="mt-7">
-              <CollaboratorsCarousel
-                items={[
-                  {
-                    src: "/images-web/uc.png",
-                    alt: "Logo Universidad de Cantabria",
-                    width: 520,
-                    height: 220,
-                  },
-                  {
-                    src: "/images-web/logo-ctc-gris.png",
-                    alt: "Logo CTC",
-                    width: 520,
-                    height: 220,
-                  },
-                  {
-                    src: "/images-web/UBU_logo.png",
-                    alt: "Logo Universidad de Burgos",
-                    width: 520,
-                    height: 220,
-                  },
-                  {
-                    src: "/images-web/logotextilsantanderina.png",
-                    alt: "Logo Textil Santanderina",
-                    width: 520,
-                    height: 220,
-                  },
-                  {
-                    src: "/images-web/inade.png",
-                    alt: "Logo INADE",
-                    width: 520,
-                    height: 220,
-                  },
-                ]}
-                repeatsPerHalf={7}
-                speedSeconds={90}
-              />
+            <div className="mt-7 rounded-xl border border-[#c0c3c8] bg-[#f2f2f2] px-6 py-5">
+              <div className="-mx-6 overflow-x-auto px-6">
+                <div className="flex flex-nowrap items-center justify-center gap-10">
+                {[
+                  { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
+                  { src: "/images-web/logo-ctc-gris.png", alt: "Logo CTC" },
+                  { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
+                  { src: "/images-web/logotextilsantanderina.png", alt: "Logo Textil Santanderina" },
+                  { src: "/images-web/inade.png", alt: "Logo INADE" },
+                ].map((logo) => (
+                  <div
+                    key={logo.src}
+                    className="relative h-16 w-[240px] flex-none"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
