@@ -35,24 +35,24 @@ export default function CollaboratorsCarousel({
       }}
       aria-label="Collaborators carousel"
     >
-      <div
-        className="flex w-max will-change-transform"
-        style={{
-          animation: `vtx-marquee ${speedSeconds}s linear infinite`,
-        }}
-      >
-        <div className="flex items-center gap-10">
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="flex min-w-full will-change-transform"
+          style={{
+            animation: `vtx-marquee ${speedSeconds}s linear infinite`,
+          }}
+        >
           {trackItems.map((item, idx) => (
             <div
               key={`${item.src}-${idx}`}
-              className="flex h-24 items-center justify-center"
+              className="flex h-24 min-w-[140px] flex-shrink-0 items-center justify-center px-4"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 width={item.width}
                 height={item.height}
-                className="h-16 w-auto object-contain md:h-20"
+                className="h-12 w-auto object-contain md:h-20"
               />
             </div>
           ))}

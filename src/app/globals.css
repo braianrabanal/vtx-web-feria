@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --background: #1a1e29; /* Deep Frame */
   --foreground: #f2f4f3; /* Clarity White */
