@@ -165,10 +165,16 @@ export default async function Home({ params }: Props) {
                       {
                         src: "/images-web/inade.png",
                         alt: "Logo INADE",
+                        className: "scale-75",
                       },
                     ].map((logo) => (
                       <div key={logo.src} className="relative h-12 w-full">
-                        <Image src={logo.src} alt={logo.alt} fill className="object-contain" />
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          className={`object-contain ${logo.className ?? ""}`}
+                        />
                       </div>
                     ))}
                   </div>
@@ -182,7 +188,7 @@ export default async function Home({ params }: Props) {
                     { src: "/images-web/logotextilsantanderina.png", alt: "Logo Textil Santanderina" },
                     { src: "/images-web/uc.png", alt: "Logo Universidad de Cantabria" },
                     { src: "/images-web/UBU_logo.png", alt: "Logo Universidad de Burgos" },
-                    { src: "/images-web/inade.png", alt: "Logo INADE" },
+                    { src: "/images-web/inade.png", alt: "Logo INADE", imageClassName: "scale-75" },
                   ]}
                   speedSeconds={30}
                 />
