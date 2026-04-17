@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 
-type Item = { src: string; alt: string; imageClassName?: string };
+type Item = {
+  src: string;
+  alt: string;
+  imageClassName?: string;
+  wrapperClassName?: string;
+};
 
 type Props = {
   items: Item[];
@@ -36,7 +41,7 @@ export default function ValidatorsMarquee({ items, speedSeconds = 26 }: Props) {
         {trackItems.map((item, idx) => (
           <div
             key={`${item.src}-${idx}`}
-            className="relative mx-1 h-12 w-56 flex-none md:mx-2 md:h-24 md:w-96"
+            className={`relative mx-1 h-12 w-56 flex-none md:mx-2 md:h-24 md:w-96 ${item.wrapperClassName ?? ""}`}
           >
             <Image
               src={item.src}
