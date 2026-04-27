@@ -1,7 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/reveal";
-import productoVideoRef from "../../../../webadobe-boceto/pagina2/3.png";
 import { getDictionary } from "@/content";
 import { isLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
@@ -46,11 +44,19 @@ export default async function ProductoPage({ params }: Props) {
 
       <Reveal delayMs={90}>
         <section className="-mx-5 bg-[#efefef] md:-mx-8">
-          <div className="relative mx-auto min-h-[520px] max-w-[1720px] overflow-hidden">
-            <Image src={productoVideoRef} alt="VISIORTEX control de calidad inteligente" fill className="scale-[1.02] object-cover object-top" />
-          </div>
-          <div className="mx-auto max-w-[1720px] px-5 py-5 md:px-8">
-            <p style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 400, fontSize: "clamp(20px, 4.6vw, 40px)", lineHeight: "1.2", color: "#4b4b4b" }}>{ui.product.videoCaption}</p>
+          <div className="relative mx-auto max-w-[1720px] overflow-hidden px-5 py-3 md:px-8">
+            <video
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-auto w-full rounded-md border border-[#c8cbd1] bg-black"
+            >
+              <source src="/VideoVisiortex2026.mp4" type="video/mp4" />
+              Tu navegador no soporta la etiqueta de vídeo.
+            </video>
           </div>
         </section>
       </Reveal>
