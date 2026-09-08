@@ -79,22 +79,26 @@ export default function QualityPage() {
             </div>
           </div>
 
-          <div className="grid min-h-[360px] grid-rows-2 gap-2 bg-[#f7f7f7] p-2 md:min-h-[680px] md:gap-3 md:p-3">
-            <div className="relative min-h-[170px] overflow-hidden rounded-md border border-[#d8d8d8]">
-              <Image
-                src="/images-web/pagina4imagen1.png"
-                alt="Interfaz Quality en operación"
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-            <div className="relative min-h-[170px] overflow-hidden rounded-md border border-[#d8d8d8]">
-              <Image
-                src="/images-web/defecto_webvtx.png"
-                alt="Mapa térmico de defecto detectado"
-                fill
-                className="object-cover object-center"
-              />
+          <div className="flex items-center justify-center bg-[#efefef] px-4 py-5 md:px-5 md:py-6">
+            <div className="flex w-[94%] flex-col gap-3">
+              <div className="overflow-hidden rounded-md bg-white p-[3px] shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
+                <Image
+                  src="/images-web/pagina4imagen1.png"
+                  alt="Interfaz Quality de inspección de tela"
+                  width={942}
+                  height={657}
+                  className="h-auto w-full rounded-[3px]"
+                />
+              </div>
+              <div className="overflow-hidden rounded-md bg-white p-[3px] shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
+                <Image
+                  src="/images-web/defecto_webvtx.png"
+                  alt="Detalle de defecto detectado en Quality"
+                  width={1024}
+                  height={497}
+                  className="h-auto w-full rounded-[3px]"
+                />
+              </div>
             </div>
           </div>
         </div>
